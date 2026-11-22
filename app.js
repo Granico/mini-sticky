@@ -60,6 +60,7 @@ async function init() {
   document.getElementById("board").addEventListener("click", handleBoardClick);
   document.getElementById("add-card-form").addEventListener("submit", handleAddCard);
   document.getElementById("filters").addEventListener("click", handleFilterClick);
+  document.getElementById("clear-done").addEventListener("click", () => { cards = cards.filter(card => !card.done); render(); });
 
   const { data, error } = await fetchCardsFromServer();
 
