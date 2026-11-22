@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Sticky</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f4f4f9; }
+    #board { display: flex; gap: 15px; flex-wrap: wrap; }
+    .card {
+      background: #fff9c4; padding: 15px; border-radius: 8px;
+      width: 180px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+    }
+    .card.done { background: #e0e0e0; text-decoration: line-through; opacity: 0.7; }
+  </style>
+</head>
+<body>
+  <h1>Mon Tableau Sticky</h1>
+  <div id="controls" style="margin-bottom: 20px;">
+  <!-- 1. Formulaire d'ajout -->
+  <form id="add-card-form" style="margin-bottom: 12px;">
+    <input type="text" id="owner-input" placeholder="Propriétaire (ex: Cyril)" required />
+    <input type="text" id="title-input" placeholder="Nouvelle tâche..." required />
+    <button type="submit">Ajouter</button>
+  </form>
+
+  <!-- 2. Boutons de filtre -->
+  <div id="filters">
+    <button data-owner="ALL">Tous</button>
+    <button data-owner="Cyril">Cyril</button>
+    <button data-owner="Alice">Alice</button>
+    <button data-owner="Bob">Bob</button>
+  </div>
+</div>
+  <div id="board"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
